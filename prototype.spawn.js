@@ -37,6 +37,10 @@ StructureSpawn.prototype.spawnCreepsIfNecessary =
         }
         // if no backup creep is required
         else {
+            if (numberOfCreeps['upgrader'] != 2) {
+                name = this.createCustomCreep(room.energyAvailable, 'upgrader');
+            }
+
             // check if all sources have miners
             let sources = room.find(FIND_SOURCES);
             // iterate over all sources
